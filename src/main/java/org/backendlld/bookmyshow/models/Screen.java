@@ -1,16 +1,25 @@
 package org.backendlld.bookmyshow.models;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
-public class Screens extends BaseModel{
+public class Screen extends BaseModel{
     private String name;
     private int totalSeats;
     private int availableSeats;
-    private String status;
-    private String profilePic;
+    private ScreenStatus status;
+    @ManyToOne
+    private Theater theater;
+    @OneToMany
+    private List<Seat> seats;
+
+    @Enumerated(EnumType.STRING)
+    @ElementCollection
+    private List<Features> features;
 }

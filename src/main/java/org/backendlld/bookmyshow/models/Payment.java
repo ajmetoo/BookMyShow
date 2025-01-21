@@ -4,13 +4,15 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 @Getter
 @Setter
 public class Payment extends BaseModel{
     private String paymentId;
-    private String paymentStatus;
+    private PaymentState status;
     private String paymentMode;
-    private String paymentAmount;
-    private String paymentDate;
+    private Double amount;
+    private Date paymentDate;
 }

@@ -1,8 +1,10 @@
 package org.backendlld.bookmyshow.repositories;
 
+import org.backendlld.bookmyshow.models.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class BookingRepository {
+public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
 }
